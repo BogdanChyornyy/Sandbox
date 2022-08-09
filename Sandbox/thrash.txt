@@ -1,0 +1,24 @@
+﻿
+                //Tree tree = new Tree();
+                //tree.AddValue("january");
+                //tree.AddValue("february");
+                //tree.AddValue("march");
+                //tree.AddValue("april");
+                //tree.AddValue("may");
+                //tree.AddValue("june");
+                //tree.AddValue("july");
+                //tree.AddValue("august");
+                //tree.AddValue("september");
+                //tree.AddValue("oktober");
+                //tree.AddValue("november");
+                //tree.AddValue("december");
+
+                //tree.Remove(tree, "september", "");
+
+
+                
+            for (int i = 0; i < 8; i++)
+            {
+                Console.WriteLine("[" + EigthQueens.xChord[i] + "," + EigthQueens.yChord[i] + "]");
+            }
+
