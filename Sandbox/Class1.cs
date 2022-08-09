@@ -14,8 +14,8 @@ namespace Sandbox
         {
             if (tryCounter == 0)
             {
-                tryCounter++; // счетчик попыток
-                Console.WriteLine("Case " + tryCounter); // Отображение попытки
+                tryCounter++; // счетчик попыток.
+                Console.WriteLine("Case " + tryCounter); // Отображение попытки.
                 for (int i = firstItem; i < 8; i++)
                 {
                     if (i > EigthQueens.queenCounter)
@@ -37,8 +37,8 @@ namespace Sandbox
 
             else
             {
-                tryCounter++; // счетчик попыток
-                Console.WriteLine("Case " + tryCounter); // Отображение попытки
+                tryCounter++; // счетчик попыток.
+                Console.WriteLine("Case " + tryCounter); // Отображение попытки.
                 for (int i = firstItem; i < 8; i++)
                 {
                     if (i > EigthQueens.queenCounter)
@@ -68,8 +68,8 @@ namespace Sandbox
         }
         public static void CreateArrayCorrect()
         {
-            tryCounter++; // счетчик попыток
-            Console.WriteLine("Case " + tryCounter); // Отображение попытки
+            tryCounter++; // счетчик попыток.
+            Console.WriteLine("Case " + tryCounter); // Отображение попытки.
             Array.Clear(EigthQueens.array);
             EigthQueens.saveCounter = EigthQueens.queenCounter - 1;
             EigthQueens.queenCounter = 0;
