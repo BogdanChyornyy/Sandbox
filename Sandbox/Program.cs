@@ -8,134 +8,43 @@ namespace Sandbox
 {
     class Program
     {
-        public static int generateChordX;
-        public static int generateChordY;
-
+        public int m;
+        public int min;
         public static void Main(string[] args)
         {
-            Class1.CreateArrayFirst(0, 0);
+            int quantity = Convert.ToInt32(Console.ReadLine());
+            Random rand = new Random();
+            int[] numbers = new int[quantity];
+            for (int i = 0; i < quantity; i++)
+            {
+                numbers[i] = rand.Next(0, quantity);
+            }
+            Sort(numbers, quantity);
+        }
 
+        public static void Sort(int[] numbers, int quantity)
+        {
+            var range = new SortedDictionary<int, int>();
 
-            //for (generateChordX = 0; generateChordX < 8; generateChordX++)
-            //{
-            //    for (generateChordY = 0; generateChordY < 8; generateChordY++)
-            //    {
-            //        Sandbox.EigthQueens.CreateArray(generateChordX, generateChordY);
-            //    }
-            //}
-            //if (EigthQueens.queenCounter < 8)
-            //{
+            for (int i = 0; i < quantity; i++)
+            {
+                if (range.ContainsKey(numbers[i]))
+                {
+                    range[numbers[i]]++;
+                }
+                else
+                {
+                    range.Add(numbers[i], 1);
+                }
+            }
 
-            //}
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            ////test
-            //for (generateChordX = 2; generateChordX < 8; generateChordX++)
-            //{
-            //    for (generateChordY = 7; generateChordY < 8; generateChordY++)
-            //    {
-            //        Sandbox.EigthQueens.CreateArray(generateChordX, generateChordY);
-            //    }
-            //}
-
-            //int count = 1;
-            //while (true)
-            //{
-            //    for (int i = 0; i < 8; i++)
-            //    {
-            //        for (int j = 0; j < 8; j++)
-            //        {
-            //            Console.WriteLine(count + "case");
-
-            //            for (generateChordX = i; generateChordX < 8; generateChordX++)
-            //            {
-            //                for (generateChordY = j; generateChordY < 8; generateChordY++)
-            //                {
-            //                    Sandbox.EigthQueens.CreateArray(generateChordX, generateChordY);
-            //                }
-            //            }
-
-            //            for (generateChordX = 0; generateChordX < 8; generateChordX++)
-            //            {
-            //                for (generateChordY = 0; generateChordY < 8; generateChordY++)
-            //                {
-            //                    Sandbox.EigthQueens.CreateArray(generateChordX, generateChordY);
-            //                }
-            //            }
-
-            //            if (EigthQueens.queenCounter != 8)
-            //            {
-
-
-            //                //EigthQueens.queenCounter = 0;
-            //                //EigthQueens.fillingChordX = 0;
-            //                //EigthQueens.fillingChordY = 0;
-            //                //EigthQueens.checkChordX = 0;
-            //                //EigthQueens.checkChordY = 0;
-            //                //Array.Clear(EigthQueens.array);
-            //            }
-
-            //            if (EigthQueens.queenCounter == 7)
-            //            {
-            //                for (int faindQueen1 = 0; generateChordX < 8; generateChordX++)
-            //                {
-            //                    for (int faindQueen2 = 0; generateChordY < 8; generateChordY++)
-            //                    {
-            //                        if (EigthQueens.array[faindQueen1, faindQueen2] == 1)
-            //                        {
-            //                            Console.Write("[" + faindQueen1 + "," + faindQueen2 + "]");
-            //                            break;
-            //                        }
-            //                    }
-            //                }
-
-            //                EigthQueens.queenCounter = 0;
-            //                EigthQueens.fillingChordX = 0;
-            //                EigthQueens.fillingChordY = 0;
-            //                EigthQueens.checkChordX = 0;
-            //                EigthQueens.checkChordY = 0;
-            //                Array.Clear(EigthQueens.array);
-            //            }
-
-            //            count++;
-            //        }
-            //    }
-
-            //}
+            foreach (var key in range.Keys)
+            {
+                for (int j = 1; j <= range[key]; j++)
+                {
+                    Console.WriteLine(key);
+                }
+            }
         }
     }
 }
