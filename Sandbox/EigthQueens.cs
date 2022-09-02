@@ -8,15 +8,15 @@ namespace Sandbox
 {
     class EigthQueens
     {
-        public static int queenCounter;
-        public static int saveCounter;
-        public static int fillingChordX;
-        public static int fillingChordY;
-        public static int checkChordX;
-        public static int checkChordY;
-        public static int[,] array = new int[8, 8];
-        public static int[] xChord = new int[8];
-        public static int[] yChord = new int[8];
+        public static int queenCounter; // Счетчик вертикалей.
+        public static int saveCounter; // Инициализатор корректной вертикали.
+        public static int fillingChordX; // Координата заполнения Х.
+        public static int fillingChordY; // Координата заполнения Y.
+        public static int checkChordX; // Текущая координата Х.
+        public static int checkChordY;// Текущая координата Y.
+        public static int[,] array = new int[8, 8]; // Массив шахматной доски.
+        public static int[] xChord = new int[8]; // Массив значений Х.
+        public static int[] yChord = new int[8]; // Массив значений Y.
 
         public static void CreateArray(int firstItem, int secondItem)
         {
@@ -24,7 +24,7 @@ namespace Sandbox
 
             checkChordY = secondItem;
 
-            if (array[checkChordX,checkChordY] == 0)
+            if (array[checkChordX,checkChordY] == 0) //Проверка свободную "клетку".
             {
                 array[checkChordX, checkChordY] = 1; // Установка ферзя (1).
 
@@ -185,7 +185,6 @@ namespace Sandbox
                         array[fillingChordX, fillingChordY] = 9;
                     }
 
-                    ///
                     fillingChordX = checkChordX;
                     fillingChordY = checkChordY;
 
@@ -228,15 +227,18 @@ namespace Sandbox
                 
                 saveArrayData(checkChordX, checkChordY, queenCounter);
                 queenCounter++;
-
-                Console.WriteLine("[" + checkChordX + "," + checkChordY + "]");
             }
         }
+        /// <summary>
+        /// Метод сохранения прошедших проверку координат.
+        /// </summary>
+        /// <param name="x"></param> Координата Х.
+        /// <param name="y"></param> Координата Y.
+        /// <param name="arrayCount"></param> Вертикаль координаты.
         public static void saveArrayData(int x, int y, int arrayCount)
         {
             xChord[arrayCount] = x;
             yChord[arrayCount] = y;
-            //Console.WriteLine("[" + xChord + "," + yChord + "]");
         }
     }
 }
